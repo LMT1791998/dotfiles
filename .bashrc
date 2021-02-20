@@ -94,7 +94,7 @@ alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
 
 # Colorize grep output (good for log files)
-alias grep='grep -color=auto'
+alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
@@ -158,3 +158,19 @@ alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 
 ### SETTING THE STARSHIP PROMPT ###
 eval "$(starship init bash)"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/leminhtam/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/leminhtam/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/leminhtam/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/leminhtam/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
